@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 
 function App() {
   const [num1, setNumero1] = useState(0);
@@ -62,7 +62,7 @@ function App() {
   return (
     <div className="App">
       <h1>Desafío Matemático ({desafio}/5)</h1>
-      <p>
+      <p id="numbers">
         {num1} {operacion} {num2}
       </p>
       <form onSubmit={handleSubmit}>
