@@ -18,9 +18,15 @@ function App() {
       return;
     }
 
-    const newNum1 = Math.floor(Math.random() * 100);
-    const newNum2 = Math.floor(Math.random() * 100);
+    // Generar números entre 0 y 10
+    let newNum1 = Math.floor(Math.random() * 11);
+    let newNum2 = Math.floor(Math.random() * 11);
     const newOperacion = Math.random() > 0.5 ? '+' : '-';
+
+    // Si es una resta, asegurarse de que num1 >= num2
+    if (newOperacion === '-' && newNum2 > newNum1) {
+      [newNum1, newNum2] = [newNum2, newNum1]; // Intercambiar valores
+    }
 
     setNumero1(newNum1);
     setNumero2(newNum2);
